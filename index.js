@@ -1,6 +1,8 @@
 import galleryItems from "./gallery-items.js";
 console.log(galleryItems);
 
+
+
 {/* <li class="gallery__item">
   <a
     class="gallery__link"
