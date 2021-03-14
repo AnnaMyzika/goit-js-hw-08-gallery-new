@@ -15,7 +15,6 @@ listGalleryRef.insertAdjacentHTML('beforeend', markup.join(''));
 
 listGalleryRef.addEventListener('click', onModalClick);
 
-let activeIndex = 0;
 
 function onModalClick(e) {
   e.preventDefault();
@@ -48,12 +47,17 @@ overlayRef.addEventListener('click', closeModal);
 
 window.addEventListener('keydown', onPressKeyLandR);
 
-
+let activeIndex = 0;
 function onPressKeyLandR(e) {
-  if (e.key === 'ArrowLeft' && activeIndex > 0) {
-    activeIndex -= 1;
-    imgRef.src = galleryItems[activeIndex].original;
-  }
-}
+ if (e.key === 'ArrowLeft' && activeIndex > 0) {
+        activeIndex -= 1;
+        imgRef.src = galleryItems[activeIndex].original;
+    }
+
+    if (e.key === 'ArrowRight' && activeIndex < galleryItems.length - 1) {
+        activeIndex += 1;
+        imgRef.src = galleryItems[activeIndex].original;
+    }
+};
 
 
